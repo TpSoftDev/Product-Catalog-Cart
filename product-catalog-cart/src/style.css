@@ -1,0 +1,21 @@
+/* src/style.css */
+body {
+          font-family: Arial, sans-serif;
+}
+
+.browse-view,
+.cart-view,
+.confirmation-view {
+          padding: 20px;
+}
+
+.card-img-top {
+          max-width: 100%;
+          height: auto;
+}
+
+.list-group-item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+}

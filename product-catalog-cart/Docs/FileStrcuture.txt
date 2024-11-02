@@ -1,0 +1,19 @@
+product-catalog-cart/
+├── node_modules/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── BrowseView.js
+│   │   ├── CartView.js
+│   │   └── ConfirmationView.js
+│   ├── data/
+│   │   └── products.json
+│   ├── images/
+│   │   └── (all product images: airpods.jpg, appleWatch.jpg, etc.)
+│   ├── App.js
+│   ├── index.js
+│   └── style.css
+├── .gitignore
+├── package.json
+└── README.md

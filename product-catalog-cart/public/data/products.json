@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "AirPods",
+    "description": "Wireless earbuds with high-quality sound and noise cancellation.",
+    "price": 199.99,
+    "image": "/images/airpods.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Apple Watch",
+    "description": "Smartwatch with health tracking, notifications, and fitness features.",
+    "price": 299.99,
+    "image": "/images/appleWatch.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Camera",
+    "description": "Compact digital camera with high resolution and zoom capabilities.",
+    "price": 449.99,
+    "image": "/images/camera.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Headphones",
+    "description": "Over-ear headphones with immersive sound and comfortable fit.",
+    "price": 149.99,
+    "image": "/images/headphone.jpg"
+  },
+  {
+    "id": 5,
+    "name": "iPhone",
+    "description": "Latest model smartphone with cutting-edge features and powerful performance.",
+    "price": 999.99,
+    "image": "/images/iphone.jpg"
+  },
+  {
+    "id": 6,
+    "name": "iPhone (2nd Edition)",
+    "description": "Second edition of the iPhone, featuring enhanced battery life and camera quality.",
+    "price": 899.99,
+    "image": "/images/iphone(2).jpg"
+  },
+  {
+    "id": 7,
+    "name": "iPhone (3rd Edition)",
+    "description": "Third edition of the iPhone, offering improved display and processing speed.",
+    "price": 799.99,
+    "image": "/images/iphone(3).jpg"
+  },
+  {
+    "id": 8,
+    "name": "Laptop",
+    "description": "High-performance laptop suitable for work, gaming, and multimedia.",
+    "price": 1099.99,
+    "image": "/images/laptop.jpg"
+  },
+  {
+    "id": 9,
+    "name": "SD Card",
+    "description": "64GB SD card for expanded storage on cameras and other devices.",
+    "price": 19.99,
+    "image": "/images/sdCard.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Speakers",
+    "description": "Portable Bluetooth speakers with deep bass and clear sound quality.",
+    "price": 89.99,
+    "image": "/images/speakers.jpg"
+  }
+]
