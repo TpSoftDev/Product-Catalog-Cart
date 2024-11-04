@@ -5,13 +5,21 @@ import CartView from './components/CartView';
 import ConfirmationView from './components/ConfirmationView';
 import './style.css';
 
-
 function App() {
   const [view, setView] = useState('browse');
   const [cart, setCart] = useState({});
   const [userData, setUserData] = useState(null);
 
-  const changeView = (newView) => setView(newView);
+  const changeView = (newView) => {
+    if (newView === 'browse') {
+      resetCart(); // Reset cart when changing to browse view
+    }
+    setView(newView);
+  };
+
+  const resetCart = () => {
+    setCart({}); // Clear the cart
+  };
 
   return (
     <div className="App">

@@ -27,7 +27,7 @@ function BrowseView({ cart, setCart, changeView }) {
   return (
     <div className="container mt-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h1>Product Catalog</h1>
+        <h1>COMS 319 Store Cart</h1>
         <button onClick={() => changeView('cart')} className="btn btn-primary">
           Go to Cart
         </button>

@@ -1,7 +1,9 @@
 product-catalog-cart/
 ├── node_modules/
 ├── public/
-│   └── index.html
+│   ├── index.html
+│   └── images/
+│       └── (all product images: airpods.jpg, appleWatch.jpg, etc.)
 ├── src/
 │   ├── components/
 │   │   ├── BrowseView.js
@@ -9,8 +11,6 @@ product-catalog-cart/
 │   │   └── ConfirmationView.js
 │   ├── data/
 │   │   └── products.json
-│   ├── images/
-│   │   └── (all product images: airpods.jpg, appleWatch.jpg, etc.)
 │   ├── App.js
 │   ├── index.js
 │   └── style.css

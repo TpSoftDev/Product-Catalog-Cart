@@ -8,10 +8,6 @@ function ConfirmationView({ cart, userData, changeView }) {
     0
   );
 
-  const resetCart = () => {
-    changeView('browse');
-  };
-
   return (
     <div className="container mt-4">
       <h1>Order Confirmation</h1>
@@ -31,7 +27,7 @@ function ConfirmationView({ cart, userData, changeView }) {
       <h3>Thank you, {userData.name}!</h3>
       <p>Email: {userData.email}</p>
       <p>Credit Card: **** **** **** {userData.card.slice(-4)}</p>
-      <button onClick={resetCart} className="btn btn-primary mt-4">Back to Browse</button>
+      <button onClick={() => changeView('browse')} className="btn btn-primary mt-4">Back to Browse</button>
     </div>
   );
 }
