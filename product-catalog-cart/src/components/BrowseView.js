@@ -32,7 +32,7 @@ function BrowseView({ addToCart, setView }) {
         />
       </div>
 
-      <h1>COMS 319 Store Cart</h1>
+      <h1>Coms 319 Store Cart</h1>
       <div className="row">
         {filteredProducts.map((product) => (
           <div key={product.id} className="col-md-4 mb-4">
