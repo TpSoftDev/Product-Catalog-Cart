@@ -1,57 +1,71 @@
-import React, { useEffect, useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+// src/components/BrowseView.js
+import React, { useState, useEffect } from 'react';
+import productsData from '../data/products.json';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function BrowseView({ addToCart, setView }) {
-  const [products, setProducts] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+function BrowseView({ cart, setCart, changeView }) {
+  const [search, setSearch] = useState('');
+  const [filteredProducts, setFilteredProducts] = useState(productsData);
 
   useEffect(() => {
-    fetch("/data/products.json")
-      .then((response) => response.json())
-      .then((data) => setProducts(data))
-      .catch((error) => console.error("Error loading products:", error));
-  }, []);
+    const lowercasedSearch = search.toLowerCase();
+    setFilteredProducts(
+      productsData.filter((product) =>
+        product.name.toLowerCase().includes(lowercasedSearch)
+      )
+    );
+  }, [search]);
 
-  // Filter products based on search term
-  const filteredProducts = products.filter((product) =>
-    product.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const updateCart = (id, delta) => {
+    setCart((prevCart) => {
+      const newQuantity = (prevCart[id] || 0) + delta;
+      if (newQuantity < 0) return prevCart;
+      return { ...prevCart, [id]: newQuantity };
+    });
+  };
 
   return (
-    <div className="browse-view">
+    <div className="container mt-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <button onClick={() => setView("cart")} className="btn btn-secondary">
+        <h1>Product Catalog</h1>
+        <button onClick={() => changeView('cart')} className="btn btn-primary">
           Go to Cart
         </button>
+      </div>
+
+      <div className="input-group mb-3">
         <input
           type="text"
           placeholder="Search for a product..."
-          className="form-control w-50"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          className="form-control"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
         />
+        <button onClick={() => setSearch('')} className="btn btn-outline-secondary">
+          Clear Search
+        </button>
       </div>
 
-      <h1>Coms 319 Store Cart</h1>
       <div className="row">
         {filteredProducts.map((product) => (
           <div key={product.id} className="col-md-4 mb-4">
-            <div className="card">
-              <img
-                src={product.image}
-                className="card-img-top"
-                alt={product.name}
-              />
+            <div className="card h-100">
+              <img src={product.image} className="card-img-top" alt={product.name} />
               <div className="card-body">
                 <h5 className="card-title">{product.name}</h5>
                 <p className="card-text">{product.description}</p>
-                <p className="card-text">${product.price.toFixed(2)}</p>
-                <button
-                  onClick={() => addToCart(product)}
-                  className="btn btn-primary"
-                >
-                  Add to Cart
-                </button>
+                <p className="card-text fw-bold">${product.price.toFixed(2)}</p>
+                <div className="d-flex align-items-center">
+                  <button onClick={() => updateCart(product.id, -1)} className="btn btn-outline-secondary btn-sm">-</button>
+                  <input
+                    type="text"
+                    value={cart[product.id] || 0}
+                    readOnly
+                    className="form-control text-center mx-2"
+                    style={{ width: '50px' }}
+                  />
+                  <button onClick={() => updateCart(product.id, 1)} className="btn btn-outline-secondary btn-sm">+</button>
+                </div>
               </div>
             </div>
           </div>
