@@ -4,6 +4,12 @@
 
 This Shopping Cart Application is a React-based web app that allows users to browse products, add them to their cart, and complete their purchase. It features an order confirmation page that summarizes the order details and user information.
 
+# Video turtorial 
+
+
+https://github.com/user-attachments/assets/6d4c32ee-f70e-4cd1-a300-57f599d77a1e
+
+
 ## Features
 
 - **Product Catalog**: Users can view a list of products, including their names and prices.
